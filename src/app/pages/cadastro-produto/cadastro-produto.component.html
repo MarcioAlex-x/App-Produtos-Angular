@@ -1,0 +1,20 @@
+<h3 class="my-5">Cadastrar produto</h3>
+<form [formGroup]="form">
+
+    <div class="mb-3 row d-flex justify-content-around">
+        <div class="col-4">
+            <label for="nome" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="nome" aria-describedby="emailHelp" formControlName="nome">
+        </div>
+
+        <div class="col-4">
+            <label for="codigoBarras" class="form-label">Código de Barras</label>
+            <input type="text" class="form-control" id="codigoBarras" aria-describedby="emailHelp" formControlName="codigoBarras">
+        </div>
+        <div class="col-2">
+            <label for="preco" class="form-label">Preço</label>
+            <input type="text" class="form-control text-start" id="preco" aria-describedby="emailHelp" formControlName="preco" currencyMask [options]="{ prefix: 'R$ ', thousands: '.', decimal: ',' }">
+        </div>        
+    </div>   
+    <button type="submit" class="btn btn-primary btn-sm ms-4 mt-4" (click)="onSubmit()" >Salvar</button> 
+</form>

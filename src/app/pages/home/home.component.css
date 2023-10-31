@@ -1,0 +1,14 @@
+img{
+    animation: anima .4s;
+}
+@keyframes anima {
+    0%{
+        margin-right: 70px;
+        opacity: 0;
+    }50%{
+        margin-left: 0px;
+        opacity: .5;
+    }100%{
+        opacity: 1;
+    }
+}

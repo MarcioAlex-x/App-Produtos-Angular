@@ -1,0 +1,35 @@
+<div class="my-5 d-flex justify-content-between align-items-center">
+
+  <div class="">
+    <h1>Produtos Disponíveis</h1>
+  </div>
+<!-- ----------------- -->
+  <div class="">
+    <button class="btn btn-primary btn-sm me-2" routerLink="/cadastrar">Cadastrar Produto</button>
+  </div>
+
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Código de Barras</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let produto of dadosProduto">
+      <th scope="row">{{ produto.id }}</th>
+      <td>{{ produto.codigoBarras }}</td>
+      <td>{{ produto.nome }}</td>
+      <td >{{ produto.preco | currency: 'BRL': 'symbol' }}</td>
+      <td>
+        <button class="btn btn-success btn-sm me-1" [routerLink]="['/produtos/edit', produto.id]"><i class="bi bi-pencil-square"></i></button>
+        <button class="btn btn-danger btn-sm" (click)="excluirProduto(produto.id)"><i class="bi bi-trash"></i></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
